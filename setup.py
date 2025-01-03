@@ -137,7 +137,7 @@ setup(
     # If using this, would have to also set common.VERSION from this so that
     # the autokey 'about' menu shows the correct version.
     # use_scm_version=True,
-    python_requires=">=3.10.16",
+    python_requires=">=3.10.6",
     # This requires autokey submodules (subdirectories) to contain their own `__init__.py` file (i.e.
     # they advertise themselves as modules).
     # find_namespace_packages might be a better alternative that doesn't
