@@ -202,7 +202,7 @@ class UInputInterface(threading.Thread, GnomeMouseReadInterface, AbstractSysInte
         self.grab_multiple_devices()
         newline_tab = "\n\t"
         logger.debug(f"The following devices are available on this system:{newline_tab}{newline_tab.join([ dev.name for dev in self.get_devices() ])}")
-        logger.debug(f"I grabbed these devices from that list: {newline_tab}{newline_tab}.join([ dev.name for dev in self.keyboards + self.mice ])}")
+        logger.debug(f"I grabbed these devices from that list: {newline_tab}{newline_tab.join([ dev.name for dev in self.keyboards + self.mice ])}")
         self.__watch_for_new_devices()
 
         try:
