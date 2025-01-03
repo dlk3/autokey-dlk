@@ -4,6 +4,7 @@
 # According to https://packages.ubuntu.com/search?keywords=python3  
 #   retrieved on 2025-01-02
 # Ubuntu 20.04 LTS (focal) = Python 3.8.2
+    3.8.2 is not supported in the "ubuntu-latest" container used by this workflow (Ubuntu 22.04)
 # Ubuntu 22.04 LTS (jammy-updates) = Python 3.10.6
 # Ubuntu 24.04 LTS (noble-updates) = Python 3.12.3
 #   This is GitHub's "ubuntu-latest" container
@@ -29,7 +30,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.8.2", "3.10.6", "3.12.3"]
+        python-version: ["3.10.6", "3.12.3"]
 
     steps:
       - uses: actions/checkout@v4
@@ -91,7 +92,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.8.2", "3.10.6", "3.12.3"]
+        python-version: ["3.10.6", "3.12.3"]
 
     steps:
       - uses: actions/checkout@v4
@@ -150,7 +151,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.8.2", "3.10.6", "3.12.3"]
+        python-version: ["3.10.6", "3.12.3"]
 
     steps:
       - uses: actions/checkout@v4
