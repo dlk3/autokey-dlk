@@ -177,8 +177,10 @@ class UInputInterface(threading.Thread, GnomeMouseReadInterface, AbstractSysInte
         threading.Thread.__init__(self)
         self.setDaemon(True)
         self.setName("UInputInterface-thread")
-        self.mediator = mediator  # type: IoMediator
-        self.app = app # type: AutokeyApplication
+        self.mediator = mediator  
+        # type: IoMediator
+        self.app = app   
+        # type: AutokeyApplication
         self.shutdown = False
         self.sending = False
         #  @dlk3 - support multiple keyboards/mice
@@ -955,7 +957,7 @@ class UInputInterface(threading.Thread, GnomeMouseReadInterface, AbstractSysInte
 
             pass
         except Exception as e:
-            logger.warning("Error sending modified key %r %r: %s", modifiers, keyName, str(e))
+            logger.warning("Error sending modified key %r %r: %s", modifiers, key.name, str(e))
 
 
     def cancel(self):
