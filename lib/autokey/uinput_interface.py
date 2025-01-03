@@ -200,9 +200,8 @@ class UInputInterface(threading.Thread, GnomeMouseReadInterface, AbstractSysInte
 
         # @dlk3 - support multiple keyboards/mice
         self.grab_multiple_devices()
-        newline_tab = "\n\t"
-        logger.debug(f"The following devices are available on this system:{newline_tab}{newline_tab.join([ dev.name for dev in self.get_devices() ])}")
-        logger.debug(f"I grabbed these devices from that list: {newline_tab}{newline_tab.join([ dev.name for dev in self.keyboards + self.mice ])}")
+        logger.debug("The following devices are available on this system:\n\t{}".format('\n\t'.join([ dev.name for dev in self.get_devices() ])))
+        logger.debug("I grabbed these devices from that list:\n\t{}".format('\n\t'.join([ dev.name for dev in self.keyboards + self.mice ])))
         self.__watch_for_new_devices()
 
         try:
@@ -246,7 +245,7 @@ class UInputInterface(threading.Thread, GnomeMouseReadInterface, AbstractSysInte
                 logger.info("UDEV reports that a new device was added to the system, checking to see if it is a keyboard or mouse that I should grab.")
                 self.grab_multiple_devices()
                 self.ui = evdev.UInput.from_device(*self.device_paths, name="autokey mouse and keyboard")
-                logger.debug(f"Devices that I've grabbed: \"{'\", \"'.join([ dev.name for dev in self.keyboards + self.mice ])}\"")
+                logger.debug("Devices that I've grabbed: \"{}\"".format('\", \"'.join([ dev.name for dev in self.keyboards + self.mice ])))
 
         monitor = pyudev.Monitor.from_netlink(pyudev.Context())
 
