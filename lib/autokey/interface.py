@@ -30,7 +30,8 @@ import queue
 import subprocess
 import time
 import copy
-
+import re
+import json
 
 import autokey.model.phrase
 if typing.TYPE_CHECKING:
