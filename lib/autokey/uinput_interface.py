@@ -177,10 +177,8 @@ class UInputInterface(threading.Thread, GnomeMouseReadInterface, AbstractSysInte
         threading.Thread.__init__(self)
         self.setDaemon(True)
         self.setName("UInputInterface-thread")
-        self.mediator = mediator  
-        # type: IoMediator
-        self.app = app   
-        # type: AutokeyApplication
+        self.mediator = mediator  # type = IoMediator
+        self.app = app  # type = AutokeyApplication
         self.shutdown = False
         self.sending = False
         #  @dlk3 - support multiple keyboards/mice
